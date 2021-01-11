@@ -43,15 +43,15 @@ Check this example, the main logic of the entry is placed in a global function, 
 
 ```javascript
 import {preloadReady} from '@react-loadable/revised'
-import React from 'react'
+import ReactDOM from 'react-dom';
 
-window.main = async () => {
+window.onload = async () => {
     try {
       await preloadReady()
     } catch (e){
       console.error(e)
     } finally {
-      React.hydrate(<App/>, document.getElementById('#root'))
+      ReactDOM.hydrate(<App/>, document.getElementById('#root'))
     }
 }
 ```
